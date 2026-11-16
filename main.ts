@@ -22,6 +22,8 @@ const src = new URL('./entry.png', import.meta.url);
 if (!existsSync(src)) throw new Error('entry.png is missing from the repository');
 const head = readFileSync(src).subarray(0, 8);
 if (head.toString('hex') !== '89504e470d0a1a0a') throw new Error('entry.png is not a PNG');
+// The competition caps the entry image at 1 MiB (entry_size limit).
+if (statSync(src).size > 1048576) throw new Error('entry.png exceeds the 1 MiB cap');
 copyFileSync(src, join(out, 'entry.png'));
 const dest = join(out, 'entry.png');
 if (statSync(dest).size !== statSync(src).size) throw new Error('entry.png copy is incomplete');

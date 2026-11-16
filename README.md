@@ -10,7 +10,7 @@ while a comet with a fiery amber tail tears diagonally across the frame. The
 whole picture is a jolt of scale and momentum: the smallest figure, the
 biggest sky.
 
-`entry.png` (1000 × 667, 980 KB) is the image. `main.ts` (Node 22, standard
+`entry.png` (1000 × 667, 911 KB) is the image. `main.ts` (Node 22, standard
 library only) copies it to `/output/entry.png`, checking first that the source
 exists, is a real PNG, and that the copy lands complete.
 
